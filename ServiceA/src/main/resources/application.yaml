@@ -4,3 +4,7 @@ server:
 spring:
   application:
     name: ServiceA
+csp:
+  sentinel:
+    dashboard:
+      server: 127.0.0.1:8088
