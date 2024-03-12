@@ -1,0 +1,21 @@
+version: '3'
+services:
+  sentinel-dashboard:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - "8088:8088"
+      - "8719:8719"
+    networks:
+      - wx
+    restart: always
+    environment:
+      auth.enabled: true
+      sentinel.dashboard.auth.username: wx
+      sentinel.dashboard.auth.password: zd199578
+    container_name: sentinel-dashboard
+
+networks:
+  wx:
+    external: true
