@@ -6,7 +6,6 @@ services:
       dockerfile: ./Dockerfile
     ports:
       - "8088:8088"
-      - "8719:8719"
     networks:
       - wx
     restart: always
