@@ -9,10 +9,10 @@ services:
     networks:
       - wx
     restart: always
-    environment:
-      auth.enabled: true
-      sentinel.dashboard.auth.username: wx
-      sentinel.dashboard.auth.password: zd199578
+#    environment:
+#      auth.enabled: true
+#      sentinel.dashboard.auth.username: wx
+#      sentinel.dashboard.auth.password: zd199578
     container_name: sentinel-dashboard
 
 networks:
