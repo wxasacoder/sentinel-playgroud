@@ -16,7 +16,13 @@
 -->
         <appender-ref ref="STDOUT"/>
     </logger>
+    <logger name="sentinelRecordLogger" level="INFO">
+        <appender-ref ref="STDOUT" />
+    </logger>
 
+    <logger name="sentinelCommandCenterLogger" level="INFO">
+        <appender-ref ref="STDOUT" />
+    </logger>
     <root level="${logLevel}">
         <appender-ref ref="STDOUT" />
 <!--        <appender-ref ref="DEBUG-FILE" />
