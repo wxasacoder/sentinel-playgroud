@@ -3,3 +3,6 @@ server:
 spring:
   application:
     name: ServiceA
+
+logging:
+  config: classpath:${LOGBACK_FILE:logback-local.xml}
