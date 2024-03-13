@@ -3,6 +3,10 @@ server:
 spring:
   application:
     name: ServiceA
-
+  cloud:
+    sentinel:
+      filter:
+        enabled: false
+      web-context-unify: false`
 logging:
   config: classpath:${LOGBACK_FILE:logback-local.xml}
