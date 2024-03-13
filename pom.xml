@@ -16,7 +16,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.0.2</version>
+        <version>2.6.13</version><!--因为Spring3.0 脱离javaEE 所以servlet 改了 在配置filter的时候是有问题的所以-->
     </parent>
 
     <dependencyManagement>
@@ -25,14 +25,14 @@
                 <!-- Import dependency management from Spring Boot -->
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>3.0.2</version>
+                <version>2.6.13</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-                <version>2022.0.0.0</version>
+                <version>2021.0.5.0</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -73,6 +73,9 @@
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-logging-slf4j</artifactId>
             <version>1.8.6</version>
-        </dependency>
+        </dependency><dependency>
+        <groupId>com.alibaba.csp</groupId>
+        <artifactId>sentinel-web-servlet</artifactId>
+    </dependency>
     </dependencies>
 </project>

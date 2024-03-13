@@ -11,5 +11,5 @@
     <property name="maxHistory" value="7"/>
     <property name="maxDebugHistory" value="1"/>
     <property name="maxSqlHistory" value="1"/>
-    <property name="logPath" value="/applogs/${appName}/logs"/>
+    <property name="logPath" value="./applogs/${appName}/logs"/>
 </included>
