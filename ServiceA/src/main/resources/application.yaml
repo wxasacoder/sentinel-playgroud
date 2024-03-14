@@ -1,10 +1,12 @@
-
 server:
   port: 8080
 spring:
   application:
     name: ServiceA
-csp:
-  sentinel:
-    dashboard:
-      server: 127.0.0.1:8088
+  cloud:
+    sentinel:
+      filter:
+        enabled: false
+      web-context-unify: false
+logging:
+  config: classpath:${LOGBACK_FILE:logback-local.xml}

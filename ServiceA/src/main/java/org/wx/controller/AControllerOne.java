@@ -14,22 +14,21 @@ import org.springframework.web.bind.annotation.RestController;
 public class AControllerOne {
 
     @GetMapping("/a/hello-world")
-    @SentinelResource(value = "hello", blockHandler = "exceptionHandler", fallback = "helloFallback")
-    public String helloImA() throws InterruptedException {
-        Thread.sleep(3000);
+//    @SentinelResource(value = "hello", blockHandler = "exceptionHandler", fallback = "helloFallback")
+    public String helloImA(){
         return "Hello I am A";
     }
 
 
     // Fallback 函数，函数签名与原函数一致或加一个 Throwable 类型的参数.
-    public String helloFallback() {
-        return String.format("Halooooo %d");
+    public String helloFallback(long s) {
+        return String.format("Halooooo %d", s);
     }
 
     // Block 异常处理函数，参数最后多一个 BlockException，其余与原函数一致.
-    public String exceptionHandler(BlockException ex) {
+    public String exceptionHandler(long s, BlockException ex) {
         // Do some log here.
         ex.printStackTrace();
-        return "Oops, error occurred at " ;
+        return "Oops, error occurred at " + s;
     }
 }
