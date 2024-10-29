@@ -14,7 +14,7 @@ public class FilterContextConfig {
      * 入口资源聚合问题：https://github.com/alibaba/Sentinel/issues/1024 或 https://github.com/alibaba/Sentinel/issues/1213
      * 入口资源聚合问题解决：https://github.com/alibaba/Sentinel/pull/1111
      */
-    @Bean
+//    @Bean
     public FilterRegistrationBean sentinelFilterRegistration() {
         FilterRegistrationBean registration = new FilterRegistrationBean();
         registration.setFilter(new CommonFilter());
