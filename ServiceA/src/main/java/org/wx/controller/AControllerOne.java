@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class AControllerOne {
 
     @GetMapping("/a/hello-world")
-//    @SentinelResource(value = "hello", blockHandler = "exceptionHandler", fallback = "helloFallback")
+    @SentinelResource(value = "hello", blockHandler = "exceptionHandler", fallback = "helloFallback")
     public String helloImA(){
         return "Hello I am A";
     }
