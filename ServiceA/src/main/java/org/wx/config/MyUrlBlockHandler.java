@@ -23,10 +23,10 @@ import java.io.IOException;
  * @author Saint
  */
  @Component
-public class MyUrlBlockHandler implements UrlBlockHandler {
+public class MyUrlBlockHandler implements BlockExceptionHandler {
 
     @Override
-    public void blocked(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, BlockException e) throws IOException {
+    public void handle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, BlockException e) throws Exception {
         ErrorMsg msg = null;
         if (e instanceof FlowException) {
             msg = ErrorMsg.builder()
