@@ -15,8 +15,8 @@ import org.wx.config.MyUrlBlockHandler;
 @RestController
 public class AControllerOne {
 
-    @GetMapping("/a/hello-world")
-    @SentinelResource(value = "hello", blockHandler = "exceptionHandler", fallback = "helloFallback")
+    @GetMapping("/hello-world")
+//    @SentinelResource(value = "hello", blockHandler = "exceptionHandler", fallback = "helloFallback")
     public String helloImA(){
         return "Hello I am A";
     }

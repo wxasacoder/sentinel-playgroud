@@ -1,5 +1,6 @@
 package org.wx.config;
 
+import com.alibaba.csp.sentinel.adapter.servlet.callback.UrlBlockHandler;
 import com.alibaba.csp.sentinel.adapter.spring.webmvc.callback.BlockExceptionHandler;
 import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.alibaba.csp.sentinel.slots.block.authority.AuthorityException;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 /**
  * 自定义错误页面
@@ -21,9 +23,10 @@ import javax.servlet.http.HttpServletResponse;
  * @author Saint
  */
  @Component
-public class MyUrlBlockHandler implements BlockExceptionHandler {
+public class MyUrlBlockHandler implements UrlBlockHandler {
+
     @Override
-    public void handle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, BlockException e) throws Exception {
+    public void blocked(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, BlockException e) throws IOException {
         ErrorMsg msg = null;
         if (e instanceof FlowException) {
             msg = ErrorMsg.builder()
