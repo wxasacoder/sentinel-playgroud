@@ -13,7 +13,15 @@ spring:
         dashboard: 192.168.5.66:8088
       log:
         dir: ./logs.csp
-
+      datasource:
+        # 名称随意
+        flow:
+          nacos:
+            server-addr: 192.168.5.66:8848
+            namespace: 414e212fc38c41e8aecc45f31f624002
+            dataId: sentinel-flow
+            groupId: SENTINEL
+            rule-type: flow
 
 
 logging:
