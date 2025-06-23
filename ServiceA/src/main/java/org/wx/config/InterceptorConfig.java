@@ -17,6 +17,7 @@ public class InterceptorConfig implements WebMvcConfigurer {
         SentinelWebMvcConfig config = new SentinelWebMvcConfig();
         config.setBlockExceptionHandler(new DefaultBlockExceptionHandler());
         config.setHttpMethodSpecify(true);
+        config.setWebContextUnify(true); // 统一上下文
         config.setOriginParser(request -> request.getHeader("S-user"));
         // SentinelWebInterceptor 拦截所有接口（"/**"）
         registry.addInterceptor(new SentinelWebInterceptor(config)).addPathPatterns("/**");
