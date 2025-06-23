@@ -1,0 +1,41 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: ServiceA
+  cloud:
+    sentinel:
+      filter:
+        enabled: false
+      web-context-unify: false
+      transport:
+        port: 8719
+        dashboard: 192.168.5.66:8088
+#      log:
+#        dir: ./logs.csp
+      datasource:
+        # 名称随意
+        flow:
+          nacos:
+            server-addr: 192.168.5.66:8848
+            namespace: 414e212fc38c41e8aecc45f31f624002
+            data-type: json
+            dataId: sentinel-flow
+            groupId: SENTINEL
+            rule-type: flow
+    nacos:
+      discovery:
+        server-addr: ${NACOS_DISCOVERY_ADDR:http://192.168.5.66:8848}
+        heart-beat-interval: 1000
+        namespace: ${NACOS_DISCOVERY_NAME_SPACE:414e212fc38c41e8aecc45f31f624002}
+        group: ${NACOS_DISCOVERY_GROUP:SENTINEL}
+        ephemeral: ${EPHEMERAL:true}
+        service: ${spring.application.name}
+        heart-beat-timeout: 3000
+        ip-delete-timeout: 3000
+        enabled: true
+#        username: nacos
+#        password: saif!klig.GEES0tuct
+      config:
+        import-check:
+          enabled: false

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration xmlns="http://ch.qos.logback/xml/ns/logback"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://ch.qos.logback/xml/ns/logback
+               https://raw.githubusercontent.com/enricopulatzo/logback-XSD/master/src/main/xsd/logback.xsd">
+
+    <property name="logLevel" value="INFO"/>
+    <property name="logPattern" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5level] [%t] %logger{20} - %msg%n"/>
+    <property name="appName" value="ServiceA"/>
+<!--    <property name="logPath" value="/applogs/${appName}/logs"/>-->
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>${logPattern}</pattern>
+        </encoder>
+    </appender>
+
+<!--    <appender name="DEBUG-FILE" class="ch.qos.logback.core.FileAppender">-->
+<!--        <encoder>-->
+<!--            <pattern>${logPattern}</pattern>-->
+<!--            <charset>UTF-8</charset>-->
+<!--        </encoder>-->
+<!--        <file>${logPath}/debug/${appName}-debug.log</file>-->
+<!--        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">-->
+<!--            <level>DEBUG</level>-->
+<!--        </filter>-->
+<!--    </appender>-->
+<!--    <appender name="INFO-FILE" class="ch.qos.logback.core.FileAppender">-->
+<!--        <encoder>-->
+<!--            <pattern>${logPattern}</pattern>-->
+<!--            <charset>UTF-8</charset>-->
+<!--        </encoder>-->
+<!--        <file>${logPath}/info/${appName}-info.log</file>-->
+<!--        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">-->
+<!--            <level>INFO</level>-->
+<!--        </filter>-->
+<!--    </appender>-->
+<!--    <appender name="ERROR-FILE" class="ch.qos.logback.core.FileAppender">-->
+<!--        <encoder>-->
+<!--            <pattern>${logPattern}</pattern>-->
+<!--            <charset>UTF-8</charset>-->
+<!--        </encoder>-->
+<!--        <file>${logPath}/error/${appName}-error.log</file>-->
+<!--        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">-->
+<!--            <level>ERROR</level>-->
+<!--        </filter>-->
+<!--    </appender>-->
+
+    <logger name="mybatis.sql" level="DEBUG" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+
+    <logger name="sentinelRecordLogger" level="info">
+        <appender-ref ref="STDOUT" />
+    </logger>
+
+    <logger name="sentinelCommandCenterLogger" level="info">
+        <appender-ref ref="STDOUT" />
+    </logger>
+
+
+    <root level="${logLevel}">
+        <appender-ref ref="STDOUT"/>
+<!--        <appender-ref ref="DEBUG-FILE" />-->
+<!--        <appender-ref ref="INFO-FILE" />-->
+<!--        <appender-ref ref="ERROR-FILE" />-->
+    </root>
+
+</configuration>
