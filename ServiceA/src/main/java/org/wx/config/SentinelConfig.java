@@ -11,7 +11,8 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
-public class InterceptorConfig implements WebMvcConfigurer {
+public class SentinelConfig implements WebMvcConfigurer {
+
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         SentinelWebMvcConfig config = new SentinelWebMvcConfig();
@@ -23,12 +24,12 @@ public class InterceptorConfig implements WebMvcConfigurer {
         registry.addInterceptor(new SentinelWebInterceptor(config)).addPathPatterns("/**");
     }
 
-    @Configuration
-    public class SentinelConfig {
-
-        @Bean
-        public SentinelResourceAspect sentinelResourceAspect() {
-            return new SentinelResourceAspect();
-        }
+    /**
+     * 注解支持
+     * @return
+     */
+    @Bean
+    public SentinelResourceAspect sentinelResourceAspect() {
+        return new SentinelResourceAspect();
     }
 }
