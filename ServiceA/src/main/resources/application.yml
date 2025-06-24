@@ -10,24 +10,24 @@ spring:
       web-context-unify: false
       transport:
         port: 8719
-        dashboard: 192.168.5.66:8088
+        dashboard: 127.0.0.1:8088
 #      log:
 #        dir: ./logs.csp
       datasource:
         # 名称随意
         flow:
           nacos:
-            server-addr: 192.168.5.66:8848
-            namespace: 414e212fc38c41e8aecc45f31f624002
+            server-addr: 127.0.0.1:18848
+            namespace: 349772a3-fcfb-4f1c-9505-642a425497a7
             data-type: json
             dataId: sentinel-flow
             groupId: SENTINEL
             rule-type: flow
     nacos:
       discovery:
-        server-addr: ${NACOS_DISCOVERY_ADDR:http://192.168.5.66:8848}
+        server-addr: ${NACOS_DISCOVERY_ADDR:127.0.0.1:18848}
         heart-beat-interval: 1000
-        namespace: ${NACOS_DISCOVERY_NAME_SPACE:414e212fc38c41e8aecc45f31f624002}
+        namespace: ${NACOS_DISCOVERY_NAME_SPACE:349772a3-fcfb-4f1c-9505-642a425497a7}
         group: ${NACOS_DISCOVERY_GROUP:SENTINEL}
         ephemeral: ${EPHEMERAL:true}
         service: ${spring.application.name}

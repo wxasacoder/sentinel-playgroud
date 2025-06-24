@@ -59,6 +59,9 @@
         <appender-ref ref="STDOUT" />
     </logger>
 
+    <logger name="nacos" level="DEBUG">
+        <appender-ref ref="STDOUT" />
+    </logger>
 
     <root level="${logLevel}">
         <appender-ref ref="STDOUT"/>
