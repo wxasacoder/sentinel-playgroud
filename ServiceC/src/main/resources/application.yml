@@ -1,8 +1,8 @@
 server:
-  port: 8080
+  port: 8081
 spring:
   application:
-    name: ServiceA
+    name: ServiceB
   cloud:
     sentinel:
       filter:
@@ -39,8 +39,3 @@ spring:
       config:
         import-check:
           enabled: false
-
-# 增加对于feign的支持
-feign:
-  sentinel:
-    enabled: true

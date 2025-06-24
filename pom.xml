@@ -11,6 +11,7 @@
     <modules>
         <module>sentinel-basic</module>
         <module>ServiceA</module>
+        <module>ServiceC</module>
     </modules>
 
     <parent>
@@ -93,7 +94,11 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
-<!--        <dependency>-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+        </dependency>
+        <!--        <dependency>-->
 <!--            <groupId>com.alibaba.csp</groupId>-->
 <!--            <artifactId>sentinel-web-servlet</artifactId>-->
 <!--        </dependency>-->

@@ -1,9 +1,7 @@
 package org.wx.controller;
 
-import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.wx.ServiceBfeign.ServiceBFeign;
 //import org.wx.config.MyUrlBlockHandler;
 
 /**
@@ -13,13 +11,10 @@ import org.wx.ServiceBfeign.ServiceBFeign;
 @RestController
 public class AControllerOne {
 
-    @GetMapping("/hello-world")
+    @GetMapping("/hello-world-2")
     public String helloImA(){
-        return "Hello I am A" + serviceBFeign.helloImB();
+        return "Hello I am b";
     }
-
-    @Resource
-    private ServiceBFeign serviceBFeign;
 
 
     // Fallback 函数，函数签名与原函数一致或加一个 Throwable 类型的参数.

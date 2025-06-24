@@ -3,10 +3,7 @@ package org.wx;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.client.discovery.simple.SimpleDiscoveryClientAutoConfiguration;
-import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
-import org.springframework.context.annotation.Import;
 
 /**
  * @author wuxin
@@ -15,9 +12,8 @@ import org.springframework.context.annotation.Import;
 @SpringBootApplication
 @EnableAspectJAutoProxy(exposeProxy = true, proxyTargetClass = true)
 @EnableDiscoveryClient
-@EnableFeignClients(basePackages = {"org.wx.ServiceBfeign"})
-public class ApplicationA {
+public class ApplicationB {
     public static void main(String[] args) {
-        SpringApplication.run(ApplicationA.class, args);
+        SpringApplication.run(ApplicationB.class, args);
     }
 }
