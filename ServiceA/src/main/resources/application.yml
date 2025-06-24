@@ -20,7 +20,7 @@ spring:
             server-addr: 127.0.0.1:18848
             namespace: 349772a3-fcfb-4f1c-9505-642a425497a7
             data-type: json
-            dataId: sentinel-flow
+            dataId: ${spring.application.name}-sentinel-flow
             groupId: SENTINEL
             rule-type: flow
     nacos:
