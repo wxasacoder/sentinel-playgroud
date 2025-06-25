@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
  * @author wuxin
  * @date 2025/06/24 14:28:48
  */
-@FeignClient(contextId = "ServiceB", value = "ServiceB")
+@FeignClient(contextId = "ServiceB", value = "ServiceB"
+        , fallbackFactory = ServiceBFeignFallbackFactory.class
+)
 public interface ServiceBFeign {
 
     @GetMapping("/hello-world-2")
