@@ -1,0 +1,1 @@
+[{"count":1.0,"grade":2,"limitApp":"default","minRequestAmount":1,"regex":false,"resource":"/hello-world","slowRatioThreshold":1.0,"statIntervalMs":1000,"timeWindow":10000},{"count":1.0,"grade":2,"limitApp":"default","minRequestAmount":1,"regex":false,"resource":"/hello-world","slowRatioThreshold":1.0,"statIntervalMs":1000,"timeWindow":1000000}]

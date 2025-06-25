@@ -15,7 +15,9 @@ public class AControllerOne {
 
     @GetMapping("/hello-world")
     public String helloImA(){
-        return "Hello I am A" + serviceBFeign.helloImB();
+        return "Hello I am A"
+                + serviceBFeign.helloImB()
+                ;
     }
 
     @Resource
