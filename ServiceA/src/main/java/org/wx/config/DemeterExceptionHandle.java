@@ -1,5 +1,6 @@
 package org.wx.config;
 
+import com.alibaba.csp.sentinel.Tracer;
 import feign.FeignException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -17,7 +18,7 @@ public class DemeterExceptionHandle {
     @ExceptionHandler({FeignException.class})
     @ResponseBody
     public Result handler(FeignException e) {
-//        Tracer.trace(e);
+        Tracer.trace(e);
         Result result = new Result();
         result.setErrorCode("200");
         result.setErrorMsg("系统异常");
