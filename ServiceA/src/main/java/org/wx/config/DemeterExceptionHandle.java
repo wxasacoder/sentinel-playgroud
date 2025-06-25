@@ -14,11 +14,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @ControllerAdvice
 @Slf4j
 public class DemeterExceptionHandle {
-
+    /**
+     * 异常处理后是不会被记录为接口的异常的
+     * @param e
+     * @return
+     */
     @ExceptionHandler({FeignException.class})
     @ResponseBody
     public Result handler(FeignException e) {
-        Tracer.trace(e);
+//        Tracer.trace(e);
         Result result = new Result();
         result.setErrorCode("200");
         result.setErrorMsg("系统异常");
